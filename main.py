@@ -305,7 +305,7 @@ def rewrite_text(message: telebot.types.Message):
         message.text = message.text.replace(f'@{me.username}', '', 1).strip()
 
     if message.text:
-        in_func.rewrite_and_compress(message.from_user.id, message.text, 'rewrite')
+        in_func.rewrite_and_compress(message, 'rewrite')
     
     else:
         bot.reply_to(message, 'Я не смог найти текст\nПишите так /rewrite ваш текст')
